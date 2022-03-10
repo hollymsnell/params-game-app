@@ -25,4 +25,9 @@ class GamesController < ApplicationController
     end
     render json: {message_to_user: output_message}
   end
+  
+  def url_segment
+    input_value = params["variable"]
+    render json: {message: "The url segment is #{input_value}"}
+  end
 end
