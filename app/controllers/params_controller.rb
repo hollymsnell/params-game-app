@@ -16,4 +16,14 @@ class ParamsController < ApplicationController
       render json: {message: "You guessed it! You win!"}
     end
   end
+
+  def user_pass_method
+    user_name = params["user_name"]
+    password = params["password"]
+    if user_name == "hugh" && password == "swordfish"
+    render json: {message: "valid credentials"}
+    else 
+      render json: {message: "your username or password is incorrect"}
+    end
+  end
 end
